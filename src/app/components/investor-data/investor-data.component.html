@@ -36,6 +36,7 @@
           [(ngModel)]="investmentData().investmentAmount"
           name="investmentAmount"
           type="number"
+          min="0"
           class="w-full px-4 py-3 border border-zinc-300 rounded-xl text-md focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
           [placeholder]="
             investmentData().investmentType === 'sip'
@@ -54,6 +55,7 @@
           [(ngModel)]="investmentData().expectedReturn"
           name="expectedReturn"
           type="number"
+          min="0"
           class="w-full px-4 py-3 border border-zinc-300 rounded-xl text-md focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
           placeholder="Expected Annual Return (%)"
           required
@@ -68,6 +70,7 @@
           [(ngModel)]="investmentData().timePeriod"
           name="timePeriod"
           type="number"
+          min="0"
           class="w-full px-4 py-3 border border-zinc-300 rounded-xl text-md focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
           placeholder="Investment Duration (Years)"
           required

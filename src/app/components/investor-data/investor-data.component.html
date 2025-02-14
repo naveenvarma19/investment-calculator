@@ -1,0 +1,86 @@
+<div
+  class="bg-gradient-to-br from-blue-50 to-zinc-100 p-6 rounded-2xl shadow-xl"
+>
+  <div class="flex gap-4 justify-center items-center mb-6">
+    <button
+      (click)="investmentData().investmentType = 'sip'"
+      [class.bg-blue-600]="investmentData().investmentType === 'sip'"
+      [class.text-white]="investmentData().investmentType === 'sip'"
+      class="cursor-pointer flex gap-2 items-center border border-blue-500 px-4 py-2 rounded-lg font-semibold text-md text-blue-600 hover:bg-blue-100 transition-all ease-in duration-300"
+    >
+      SIP
+    </button>
+    <button
+      (click)="investmentData().investmentType = 'lumpsum'"
+      [class.bg-blue-600]="investmentData().investmentType === 'lumpsum'"
+      [class.text-white]="investmentData().investmentType === 'lumpsum'"
+      class="cursor-pointer flex gap-2 items-center border border-blue-500 px-4 py-2 rounded-lg font-semibold text-md text-blue-600 hover:bg-blue-100 transition-all ease-in duration-300"
+    >
+      Lumpsum
+    </button>
+  </div>
+
+  <div class="mt-4">
+    <!-- Form -->
+    <form class="space-y-6" (ngSubmit)="onSubmit()">
+      <!-- Input Fields -->
+      <div>
+        <label class="block text-md font-semibold text-zinc-800 mb-2">
+          {{
+            investmentData().investmentType === "sip"
+              ? "Monthly SIP Amount"
+              : "Lumpsum Amount"
+          }}
+        </label>
+        <input
+          [(ngModel)]="investmentData().investmentAmount"
+          name="investmentAmount"
+          type="number"
+          class="w-full px-4 py-3 border border-zinc-300 rounded-xl text-md focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+          [placeholder]="
+            investmentData().investmentType === 'sip'
+              ? 'Monthly SIP Amount'
+              : 'Lumpsum Amount'
+          "
+          required
+        />
+      </div>
+
+      <div>
+        <label class="block text-md font-semibold text-zinc-800 mb-2"
+          >Expected Annual Return (%)</label
+        >
+        <input
+          [(ngModel)]="investmentData().expectedReturn"
+          name="expectedReturn"
+          type="number"
+          class="w-full px-4 py-3 border border-zinc-300 rounded-xl text-md focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+          placeholder="Expected Annual Return (%)"
+          required
+        />
+      </div>
+
+      <div>
+        <label class="block text-md font-semibold text-zinc-800 mb-2"
+          >Investment Duration (Years)</label
+        >
+        <input
+          [(ngModel)]="investmentData().timePeriod"
+          name="timePeriod"
+          type="number"
+          class="w-full px-4 py-3 border border-zinc-300 rounded-xl text-md focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+          placeholder="Investment Duration (Years)"
+          required
+        />
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="w-full bg-blue-500 text-white px-5 py-3 rounded-xl font-semibold text-md hover:bg-blue-600 transition-all ease-in duration-300 shadow-md"
+      >
+        Calculate Growth
+      </button>
+    </form>
+  </div>
+</div>

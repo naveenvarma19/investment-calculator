@@ -1,0 +1,69 @@
+@if(investmentTable().length){
+<div
+  class="w-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-2xl shadow-xl p-6 text-white"
+>
+  <h2 class="text-3xl font-bold mb-6 text-center">📈 Investment Growth</h2>
+  <div class="overflow-x-auto">
+    <table class="w-full text-left border-collapse border border-white/30">
+      <thead class="bg-white/20">
+        <tr>
+          <th class="p-3 text-md">📅 Year</th>
+          <th class="p-3 text-md">💰 Investment</th>
+          <th class="p-3 text-md">📊 Returns</th>
+          <th class="p-3 text-md">💲 Total Investment</th>
+          <th class="p-3 text-md">💵 Overall Portfolio</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (year of investmentTable(); track year.name) {
+        <tr class="hover:bg-white/10">
+          <td class="p-4 border-b border-white/30">{{ year.year }}</td>
+          <td class="p-4 border-b border-white/30">
+            {{ year.annualInvestment | currency : "INR" }}
+          </td>
+          <td class="p-4 border-b border-white/30">
+            {{ year.annualReturns | currency : "INR" }}
+          </td>
+          <td class="p-4 border-b border-white/30">
+            {{ year.totalInvestedToDate | currency : "INR" }}
+          </td>
+          <td class="p-4 border-b border-white/30">
+            {{ year.cumulativeTotal | currency : "INR" }}
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+
+}@else {
+<div
+  class="flex flex-col items-center justify-center bg-gradient-to-r from-indigo-100 to-purple-100 p-8 rounded-2xl shadow-xl"
+>
+  <p class="text-2xl text-gray-800 font-bold mb-5">🚀 Get Started!</p>
+  <p class="text-base text-gray-600 mb-4 text-center">
+    Please enter the details and click on
+    <span class="font-semibold">"Calculate Growth"</span>.
+  </p>
+  <div
+    class="bg-white p-6 rounded-lg border border-blue-300 shadow-md w-full max-w-sm mb-4"
+  >
+    <p class="text-lg text-blue-800 font-semibold mb-3">💡 What is SIP?</p>
+    <p class="text-sm text-blue-700 leading-relaxed">
+      A Systematic Investment Plan (SIP) allows you to invest a fixed amount
+      regularly in mutual funds. It helps you build wealth over time through
+      disciplined investing and the power of compounding.
+    </p>
+  </div>
+  <div
+    class="bg-white p-6 rounded-lg border border-green-300 shadow-md w-full max-w-sm mb-4"
+  >
+    <p class="text-lg text-green-800 font-semibold mb-3">❓ Why Choose SIP?</p>
+    <p class="text-sm text-green-700 leading-relaxed">
+      SIPs offer flexibility, affordability, and the benefit of rupee cost
+      averaging, reducing the impact of market volatility.
+    </p>
+  </div>
+</div>
+}

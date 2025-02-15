@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-        @for (year of investmentTable(); track year.name) {
+        @for (year of investmentTable(); track year.year) {
         <tr class="hover:bg-white/10">
           <td class="p-4 border-b border-white/30">{{ year.year }}</td>
           <td class="p-4 border-b border-white/30">
@@ -38,30 +38,39 @@
 </div>
 
 }@else {
-<div class="flex flex-col items-center justify-center p-8 hidden md:block">
-  <p class="text-2xl text-gray-800 font-bold mb-5">🚀 Get Started!</p>
-  <p class="text-base text-gray-600 mb-4 text-center">
-    Please enter the details and click on
-    <span class="font-semibold">"Calculate Growth"</span>.
-  </p>
-  <div
-    class="bg-white p-6 rounded-lg border border-blue-300 shadow-md w-full max-w-sm mb-4"
-  >
-    <p class="text-lg text-blue-800 font-semibold mb-3">💡 What is SIP?</p>
-    <p class="text-sm text-blue-700 leading-relaxed">
-      A Systematic Investment Plan (SIP) allows you to invest a fixed amount
-      regularly in mutual funds. It helps you build wealth over time through
-      disciplined investing and the power of compounding.
+<div
+  class="flex flex-col items-center justify-center text-center p-8 hidden md:block"
+>
+  <div>
+    <p class="text-2xl text-gray-800 font-bold mb-5">🚀 Get Started!</p>
+    <p class="text-base text-gray-600 mb-4">
+      Please enter the details and click on
+      <span class="font-semibold">"Calculate Growth"</span>.
     </p>
   </div>
-  <div
-    class="bg-white p-6 rounded-lg border border-green-300 shadow-md w-full max-w-sm mb-4"
-  >
-    <p class="text-lg text-green-800 font-semibold mb-3">❓ Why Choose SIP?</p>
-    <p class="text-sm text-green-700 leading-relaxed">
-      SIPs offer flexibility, affordability, and the benefit of rupee cost
-      averaging, reducing the impact of market volatility.
-    </p>
+  <div class="flex flex-col justify-center items-center">
+    <div
+      class="bg-white flex flex-col items-center justify-center text-center p-6 rounded-lg border border-blue-400 shadow-md w-full max-w-sm mb-4"
+    >
+      <p class="text-lg text-blue-900 font-semibold mb-3">💡 What is SIP?</p>
+      <p class="text-sm text-blue-800 leading-relaxed">
+        A Systematic Investment Plan (SIP) allows you to invest a fixed amount
+        regularly in mutual funds. It helps you build wealth over time through
+        disciplined investing and the power of compounding.
+      </p>
+    </div>
+    <div
+      class="bg-white flex flex-col items-center justify-center text-center p-6 rounded-lg border border-green-400 shadow-md w-full max-w-sm mb-4"
+    >
+      <p class="text-lg text-green-900 font-semibold mb-3">
+        ❓ Why Choose SIP?
+      </p>
+      <p class="text-sm text-green-800 leading-relaxed">
+        SIPs offer flexibility, affordability, and the benefit of rupee cost
+        averaging, reducing the impact of market volatility.
+      </p>
+    </div>
   </div>
 </div>
+
 }

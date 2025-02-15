@@ -1,7 +1,7 @@
 <div
-  class="bg-gradient-to-br from-blue-50 to-zinc-100 p-6 rounded-2xl shadow-xl"
+  class="bg-gradient-to-br from-blue-50 to-zinc-100 p-6 rounded-2xl shadow-xl w-full min-w-[320px] max-w-md mx-auto md:max-w-lg"
 >
-  <div class="flex gap-4 justify-center items-center mb-6">
+  <div class="flex flex-row gap-4 justify-center items-center mb-6">
     <button
       (click)="investmentData().investmentType = 'sip'"
       [class.bg-blue-600]="investmentData().investmentType === 'sip'"
@@ -37,11 +37,11 @@
           name="investmentAmount"
           type="number"
           min="0"
-          class="w-full px-4 py-3 border border-zinc-300 rounded-xl text-md focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+          class="w-full px-4 py-3 border border-zinc-300 rounded-xl text-md placeholder:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
           [placeholder]="
             investmentData().investmentType === 'sip'
-              ? 'Monthly SIP Amount'
-              : 'Lumpsum Amount'
+              ? 'Enter Monthly SIP Amount'
+              : 'Enter Lumpsum Amount'
           "
           required
         />
@@ -56,8 +56,8 @@
           name="expectedReturn"
           type="number"
           min="0"
-          class="w-full px-4 py-3 border border-zinc-300 rounded-xl text-md focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
-          placeholder="Expected Annual Return (%)"
+          class="w-full px-4 py-3 border border-zinc-300 rounded-xl text-md placeholder:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+          placeholder="Enter Expected Annual Return (%)"
           required
         />
       </div>
@@ -71,8 +71,8 @@
           name="timePeriod"
           type="number"
           min="0"
-          class="w-full px-4 py-3 border border-zinc-300 rounded-xl text-md focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
-          placeholder="Investment Duration (Years)"
+          class="w-full px-4 py-3 border border-zinc-300 rounded-xl text-md placeholder:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+          placeholder="Enter Investment Duration (Years)"
           required
         />
       </div>

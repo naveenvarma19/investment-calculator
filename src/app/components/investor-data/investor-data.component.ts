@@ -12,6 +12,7 @@ export class InvestorDataComponent {
   investmentData = signal<InvestorData>({
     investmentType: 'sip',
   } as InvestorData);
+  showError = signal(false);
 
   private investmentService = inject(InvestmentService);
 
@@ -24,7 +25,7 @@ export class InvestorDataComponent {
       this.investmentService.calculateInvestment(this.investmentData());
       this.investmentData.set({} as InvestorData);
     } else {
-      alert('Please enter all the investment details');
+      this.showError.set(true);
     }
   }
 }

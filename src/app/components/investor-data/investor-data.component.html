@@ -6,7 +6,7 @@
       (click)="investmentData().investmentType = 'sip'"
       [class.bg-blue-600]="investmentData().investmentType === 'sip'"
       [class.text-white]="investmentData().investmentType === 'sip'"
-      class="cursor-pointer flex gap-2 items-center border border-blue-500 px-4 py-2 rounded-lg font-semibold text-md text-blue-600 hover:bg-blue-100 transition-all ease-in duration-300"
+      class="cursor-pointer hover:text-blue-600 flex gap-2 items-center border border-blue-500 px-4 py-2 rounded-lg font-semibold text-md text-blue-600 hover:bg-blue-100 transition-all ease-in duration-300"
     >
       SIP
     </button>
@@ -14,7 +14,7 @@
       (click)="investmentData().investmentType = 'lumpsum'"
       [class.bg-blue-600]="investmentData().investmentType === 'lumpsum'"
       [class.text-white]="investmentData().investmentType === 'lumpsum'"
-      class="cursor-pointer flex gap-2 items-center border border-blue-500 px-4 py-2 rounded-lg font-semibold text-md text-blue-600 hover:bg-blue-100 transition-all ease-in duration-300"
+      class="cursor-pointer flex gap-2 items-center hover:text-blue-600 border border-blue-500 px-4 py-2 rounded-lg font-semibold text-md text-blue-600 hover:bg-blue-100 transition-all ease-in duration-300"
     >
       Lumpsum
     </button>
@@ -78,6 +78,7 @@
       </div>
 
       <!-- Submit Button -->
+
       <button
         type="submit"
         class="w-full bg-blue-500 text-white px-5 py-3 mt-2 rounded-xl font-semibold text-md hover:bg-blue-600 transition-all ease-in duration-300 shadow-md"
